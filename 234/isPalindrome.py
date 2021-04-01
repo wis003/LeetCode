@@ -1,3 +1,5 @@
+# Palindrome Linked List
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -16,3 +18,10 @@ class Solution:
                 return False 
             i += 1
         return True
+
+testA = ListNode(1, ListNode(2, ListNode(2, ListNode(1, None))))
+testB = ListNode(1, ListNode(2, None))
+
+solutionTest = Solution()
+print(solutionTest.isPalindrome(testA))
+print(solutionTest.isPalindrome(testB))
