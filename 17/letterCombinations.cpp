@@ -65,7 +65,7 @@ int main() {
 
 	std::string test1 = "2";
 	std::string test2 = "23";
-	std::string test3 = "238";
+	std::string test3 = "237";
 	
 
 	std::vector<std::string> comb1 = object.letterCombinations(test1);
