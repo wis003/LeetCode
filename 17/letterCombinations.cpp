@@ -61,12 +61,34 @@ class Solution {
 
 
 int main() {
-	std::string test1 = "23";
 	Solution object;
-	std::vector<std::string> output = object.letterCombinations(test1);
 
-	for(std::string combination : output) {
-		std::cout << combination << std::endl;
+	std::string test1 = "2";
+	std::string test2 = "23";
+	std::string test3 = "238";
+	
+
+	std::vector<std::string> comb1 = object.letterCombinations(test1);
+	std::vector<std::string> comb2 = object.letterCombinations(test2);
+	std::vector<std::string> comb3 = object.letterCombinations(test3);
+
+	std::string out1, out2, out3;
+
+	for(std::string combination : comb1) {
+		out1 = out1 + combination + " ";
 	}
+
+	for(std::string combination : comb2) {
+		out2 = out2 + combination + " ";
+	}
+
+	for(std::string combination : comb3) {
+		out3 = out3 + combination + " ";
+	}
+
+	std::cout << out1 << comb1.size() << std::endl;
+	std::cout << out2 << comb2.size() << std::endl;
+	std::cout << out3 << comb3.size() << std::endl;
+
 	return 0;
 }
