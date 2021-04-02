@@ -31,8 +31,10 @@ class Solution {
 
 		std::vector<std::string> letterCombinations(std::string digits) {
 			std::vector<std::string> output;
+			std::vector<std::string> working;
 			for(int i = 0; i < digits.size(); i++) {
-				output = recurse(output, digits[i]);
+				working = output;
+				output = recurse(working, digits[i]);
 			}
 
 			return output;
@@ -43,7 +45,7 @@ class Solution {
 			std::vector<char> mapping = numberToLetter[digit];
 			if(input.size() == 0) {
 				for(char letter : mapping) {
-					output.push_back("" + letter);
+					output.push_back(std::string(1, letter));
 				}
 			}
 			else {
