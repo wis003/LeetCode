@@ -10,3 +10,6 @@ def permute(nums):
             out.append(list(nums[i]) + permute(nums[1:]))
 
     return out
+
+test1 = [1, 2, 3]
+print(permute(test1))
