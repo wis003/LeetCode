@@ -7,11 +7,10 @@ def permute(nums):
     
     else:
         for i in range(len(nums)):
-            temp = nums
+            temp = nums[:]
             temp.remove(nums[i])
-            out.append(list(nums[i]) + permute(temp))
-
-    return out
+            out.append([nums[i]] + permute(temp))
+        return out
 
 test1 = [1, 2, 3]
-print(permute(test1))
+print(str(permute(test1)))
