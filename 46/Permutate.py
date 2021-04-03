@@ -14,4 +14,8 @@ def permute(nums):
         return out
 
 test1 = [1, 2, 3]
+test2 = [0, 1]
+test3 = [1]
 print(str(permute(test1)))
+print(str(permute(test2)))
+print(str(permute(test3)))
