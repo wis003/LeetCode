@@ -7,7 +7,9 @@ def permute(nums):
     
     else:
         for i in range(len(nums)):
-            out.append(list(nums[i]) + permute(nums[1:]))
+            temp = nums
+            temp.remove(nums[i])
+            out.append(list(nums[i]) + permute(temp))
 
     return out
 
