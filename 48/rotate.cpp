@@ -48,6 +48,7 @@ int main() {
         for(auto j : i) {
             cout << j << " ";
         }
+        cout << "/ ";
     }
 
     cout << endl;
@@ -56,7 +57,8 @@ int main() {
         for(auto j : i) {
             cout << j << " ";
         }
+        cout << "/ ";
     }
-    
+
     return 0;
 }
