@@ -57,4 +57,21 @@ class Solution {
             getGivenLevel(nodes, root.right, level - 1);
         }
     }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+
+
+        List<List<Integer>> test1 = new ArrayList<List<Integer>>();
+        test1 = levelOrder(root);
+        for(List<Integer> i : test1) {
+            for(Integer j : i) {
+                System.out.print(j + " ");
+            }
+        }
+    }
 }
