@@ -17,7 +17,7 @@ public class TreeNode {
 
 class Solution {
 
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> out = new ArrayList<List<Integer>>();
         int h = height(root);
         for(int i = 1; i <= h; i++) {
@@ -28,7 +28,7 @@ class Solution {
         return out;
     }
  
-    int height(TreeNode root) {
+    public static int height(TreeNode root) {
         if(root == null) {
            return 0;
         }
@@ -45,12 +45,12 @@ class Solution {
         }
     }
  
-    void getGivenLevel(List<Integer> nodes, TreeNode root, int level) {
+    public static void getGivenLevel(List<Integer> nodes, TreeNode root, int level) {
         if(root == null) {
             return;
         }
         if(level == 1) {
-            nodes.add(root.data);
+            nodes.add(root.val);
         }
         else if(level > 1) {
             getGivenLevel(nodes, root.left, level - 1);
