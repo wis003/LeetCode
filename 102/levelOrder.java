@@ -1,0 +1,60 @@
+import java.util.ArrayList;
+import java.util.List;
+
+// Definition for a binary tree node.
+public class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+
+class Solution {
+
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> out = new ArrayList<List<Integer>>();
+        int h = height(root);
+        for(int i = 1; i <= h; i++) {
+            List<Integer> nodes = new ArrayList<Integer>();
+            getGivenLevel(nodes, root, i);
+            out.add(nodes);
+        }
+        return out;
+    }
+ 
+    int height(TreeNode root) {
+        if(root == null) {
+           return 0;
+        }
+        else {
+            int lheight = height(root.left);
+            int rheight = height(root.right);
+
+            if(lheight > rheight) {
+                return lheight + 1;
+            }
+            else {
+                return rheight + 1;
+            }
+        }
+    }
+ 
+    void getGivenLevel(List<Integer> nodes, TreeNode root, int level) {
+        if(root == null) {
+            return;
+        }
+        if(level == 1) {
+            nodes.add(root.data);
+        }
+        else if(level > 1) {
+            getGivenLevel(nodes, root.left, level - 1);
+            getGivenLevel(nodes, root.right, level - 1);
+        }
+    }
+}
