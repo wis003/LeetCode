@@ -37,5 +37,11 @@ test1.right = TreeNode(3)
 test1.left.right = TreeNode(5)
 test1.right.right = TreeNode(4)
 
+test2 = TreeNode(1)
+test2.left = TreeNode(2)
+test2.right = TreeNode(3)
+test2.left.left = TreeNode(5)
+
 solutionTest = Solution()
 print(str(solutionTest.rightSideView(test1)))
+print(str(solutionTest.rightSideView(test2)))
