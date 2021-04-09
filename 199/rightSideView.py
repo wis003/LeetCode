@@ -17,8 +17,11 @@ class Solution(object):
         if root is not None:
             queue.append(root)
             
+        # BFS
         while len(queue) > 0:
             currLevel = []
+
+            # level order traversal
             for i in range(len(queue)):
                 currTreeNode = queue.pop(0)
                 currLevel.append(currTreeNode.val)
@@ -27,8 +30,11 @@ class Solution(object):
                 if currTreeNode.right is not None:
                     queue.append(currTreeNode.right)
             levelOrderView.append(currLevel)
+
+        # right side view is last element of each list
         for level in levelOrderView:
             out.append(level[len(level) - 1])
+
         return out
 
 test1 = TreeNode(1)
