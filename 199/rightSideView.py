@@ -1,9 +1,9 @@
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode(object):
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 class Solution(object):
     def rightSideView(self, root):
@@ -11,11 +11,23 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
+        queue = []
+        levelOrderView = []
         out = []
-        while root:
-            out.append(root.val)
-            if root.right:
-                root = root.right
-            else:
-                root = root.left
-        return out     
+        if root is not None:
+            queue.append(root)
+
+            
+            while len(queue) > 0:
+                currLevel = []
+                for i in range(len(queue)):
+                    currTreeNode = queue.pop(0)
+                    currLevel.append(currTreeNode.val)
+                    if currTreeNode.left is not None:
+                        queue.append(currTreeNode.left)
+                    if currTreeNode.right is not None:
+                        queue.append(currTreeNode.right)
+                levelOrderView.append(currLevel)
+        for level in levelOrderView:
+            out.append(level[len(level) - 1])
+        return out
