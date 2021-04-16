@@ -8,7 +8,7 @@ class TreeNode {
 
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        
+        // number ordering of tree nodes
     }
 
     int main() {
